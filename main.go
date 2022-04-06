@@ -45,7 +45,7 @@ func (c *conf) getConfig(apiKey string) *conf {
 			}
 		} else {
 			fmt.Println("No config file found and no API Specified. Please re-run with -apikey flag.")
-			os.Exit(0)
+			fmt.Println("... it doesn't actually matter, they don't check the api key I guess?")
 		}
 	}
 	err = yaml.Unmarshal(yamlFile, c)
@@ -57,6 +57,8 @@ func (c *conf) getConfig(apiKey string) *conf {
 }
 
 func main() {
+
+	fmt.Println("`~> -GreyCom v1.0-")
 
 	var target string
 	flag.StringVar(&target, "t", "", "Target IP Address to query")
@@ -73,8 +75,6 @@ func main() {
 	c.getConfig(apiKey)
 
 	api_key := c.ApiKey
-
-	fmt.Println("`~> -GreyCom v1.0-")
 
 	req, err := http.NewRequest("GET", "https://api.greynoise.io/v3/community/"+target, nil)
 	if err != nil {
