@@ -1,4 +1,4 @@
-# greycom
+# greycom v1.0
 ### Greynoise CLI for Community API users
 ---
 **ONLY TESTED ON 64BIT UBUNTU 20.04**
@@ -9,3 +9,21 @@ Only feature available for community is standard IP lookup, so don't expect anyt
 
 Haven't parsed output yet, just outputs the json.
 
+**Install**
+Again, not a go dev, I think this is how you're supposed to do it, who knows
+```bash
+go get github.com/jsownz/greycom
+cd $(go env GOPATH)/src/github.com/jsownz/greycom
+go install
+sudo ln -s $(go env GOPATH)/bin/greycom /usr/local/bin/greycom
+```
+
+**Usage**
+```bash
+greycom -t [target_ip]
+```
+
+To save your Community API key, use the -apikey flag:
+```bash
+greycom -t [target_ip] -apikey [community_api_key]
+```
