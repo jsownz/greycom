@@ -10,7 +10,7 @@ Only feature available for community is standard IP lookup, so don't expect anyt
 Haven't parsed output yet, just outputs the json.
 
 **Install**
-Again, not a go dev, I think this is how you're supposed to do it, who knows
+Again, not a go dev, I think this is how you're supposed to do it, who knows - also added a binary release but it was only built on 64 bit linux, so feel free to compile yourself (these instructions would be different for Windows, use your flavor of golang to build and install)
 ```bash
 go get github.com/jsownz/greycom
 cd $(go env GOPATH)/src/github.com/jsownz/greycom
